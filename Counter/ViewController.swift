@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var meaningOfCounter: UILabel!
     var count = 0
     
-    @IBAction func IncresingByOne(_ sender: Any) {
+    @IBAction func incresingByOne(_ sender: Any) {
         count += 1
         meaningOfCounter.text = "Counter value: \(count)"
     }

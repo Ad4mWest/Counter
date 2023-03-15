@@ -8,6 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        meaningOfCounter.isHidden = true
+        historyOfChanges.isHidden = true
+    }
     @IBOutlet weak private var meaningOfCounter: UILabel!
     @IBOutlet weak private var historyOfChanges: UITextView!
 
@@ -22,34 +28,43 @@ class ViewController: UIViewController {
     
     @IBAction private func incresingByOne(_ sender: Any) {
         count += 1
+        
+        meaningOfCounter.isHidden = false
+        historyOfChanges.isHidden = false
+
         meaningOfCounter.textColor = .red
-        meaningOfCounter.text = "Counter value: \(count)"
-        historyOfChanges.text += "\n [\(newFormatDate())]: value changed to +1"
+        meaningOfCounter.text = "\(count)"
+        historyOfChanges.text += "\n \(newFormatDate()) value changed to +1"
     }
     @IBAction private func decreaseByOne(_ sender: Any) {
         if count > 0 {
             count -= 1
+            
+            meaningOfCounter.isHidden = false
+            historyOfChanges.isHidden = false
+
             meaningOfCounter.textColor = .blue
-            meaningOfCounter.text = "Counter value: \(count)"
-            historyOfChanges.text += "\n [\(newFormatDate())]: value changed to -1"
+            meaningOfCounter.text = "\(count)"
+            historyOfChanges.text += "\n \(newFormatDate()) value changed to -1"
         } else {
+            
+            meaningOfCounter.isHidden = false
+            historyOfChanges.isHidden = false
+
             meaningOfCounter.textColor = .green
-            meaningOfCounter.text = "Counter value: \(count)"
-            historyOfChanges.text += "\n [\(newFormatDate())]: attempt to reduce the counter value below 0"
+            meaningOfCounter.text = "\(count)"
+            historyOfChanges.text += "\n \(newFormatDate()) attempt to reduce the counter value below 0"
         }
     }
     @IBAction private func resetCountValue(_ sender: Any) {
         count = 0
+        
+        meaningOfCounter.isHidden = false
+        historyOfChanges.isHidden = false
+
         meaningOfCounter.textColor = .orange
-        meaningOfCounter.text = "Counter value: \(count)"
-        historyOfChanges.text += "\n [\(newFormatDate())]: value reset"
+        meaningOfCounter.text = "\(count)"
+        historyOfChanges.text += "\n \(newFormatDate()) value reset"
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
-
-
 }
 

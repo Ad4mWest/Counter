@@ -1,9 +1,7 @@
 //
 //  ViewController.swift
 //  Counter
-//
-//  Created by adam west on 14.03.23.
-//
+//  Created by Adam West on 14.03.23.
 
 import UIKit
 
@@ -11,60 +9,71 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        meaningOfCounter.isHidden = true
         historyOfChanges.isHidden = true
-    }
-    @IBOutlet weak private var meaningOfCounter: UILabel!
-    @IBOutlet weak private var historyOfChanges: UITextView!
-
-    private var count = 0
-    private func newFormatDate() -> String {
-        let dateNow = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
-        dateFormatter.dateFormat = "d MMM yy - HH:mm:ss"
-        return dateFormatter.string(from: dateNow)
-    }
-    
-    @IBAction private func incresingByOne(_ sender: Any) {
-        count += 1
-        
-        meaningOfCounter.isHidden = false
-        historyOfChanges.isHidden = false
-
-        meaningOfCounter.textColor = .red
-        meaningOfCounter.text = "\(count)"
-        historyOfChanges.text += "\n \(newFormatDate()) value changed to +1"
-    }
-    @IBAction private func decreaseByOne(_ sender: Any) {
-        if count > 0 {
-            count -= 1
-            
-            meaningOfCounter.isHidden = false
-            historyOfChanges.isHidden = false
-
-            meaningOfCounter.textColor = .blue
-            meaningOfCounter.text = "\(count)"
-            historyOfChanges.text += "\n \(newFormatDate()) value changed to -1"
-        } else {
-            
-            meaningOfCounter.isHidden = false
-            historyOfChanges.isHidden = false
-
-            meaningOfCounter.textColor = .green
-            meaningOfCounter.text = "\(count)"
-            historyOfChanges.text += "\n \(newFormatDate()) attempt to reduce the counter value below 0"
+        func newFormatDate() -> String {
+            let dateNow = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US")
+            dateFormatter.dateFormat = "d MMM yy - HH:mm:ss"
+            return dateFormatter.string(from: dateNow)
         }
     }
-    @IBAction private func resetCountValue(_ sender: Any) {
-        count = 0
-        
-        meaningOfCounter.isHidden = false
+    
+    @IBOutlet weak private var meaningOfCounter: UILabel!
+    @IBOutlet weak private var historyOfChanges: UITextView!
+    private var count = 0
+    
+    private var newFormatDate: String {
+        func newFormatDate() -> String {
+            let dateNow = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US")
+            dateFormatter.dateFormat = "d MMM yy - HH:mm:ss"
+            return dateFormatter.string(from: dateNow)
+        }
+        return newFormatDate()
+    }
+    
+    @IBAction private func increasingByOne(_ sender: UIButton) {
+        count += 1
+        sender.tintColor = .white
         historyOfChanges.isHidden = false
-
-        meaningOfCounter.textColor = .orange
+        meaningOfCounter.textColor = .red
         meaningOfCounter.text = "\(count)"
-        historyOfChanges.text += "\n \(newFormatDate()) value reset"
+        historyOfChanges.text += "\n\(newFormatDate) Increase"
+    }
+    @IBAction private func decreaseByOne(_ sender: UIButton) {
+        if count > 0 {
+            count -= 1
+            sender.tintColor = .white
+            historyOfChanges.isHidden = false
+            meaningOfCounter.textColor = .blue
+            meaningOfCounter.text = "\(count)"
+            historyOfChanges.text += "\n\(newFormatDate) Decrease"
+        } else {
+            historyOfChanges.isHidden = false
+            sender.tintColor = .white
+            meaningOfCounter.textColor = .green
+            meaningOfCounter.text = "\(count)"
+            historyOfChanges.text += "\n\(newFormatDate) SubZero"
+        }
+    }
+    @IBAction private func resetCountValue(_ sender: UIButton) {
+        count = 0
+        sender.tintColor = .white
+        historyOfChanges.isHidden = false
+        meaningOfCounter.textColor = .white
+        meaningOfCounter.text = "\(count)"
+        historyOfChanges.text += "\n\(newFormatDate) Reset"
+    }
+    
+    @IBAction func changeColorOfButton(_ sender: UIButton) {
+        switch sender.tag {
+        case 0: sender.tintColor = .red
+        case 1 where count <= 0: sender.tintColor = .green
+        case 1 where count > 0: sender.tintColor = .blue
+        case 2: sender.tintColor = .white
+        default: sender.tintColor = .white
+        }
     }
 }
-

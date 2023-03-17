@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,42 +12,37 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="History of changes:" textAlignment="natural" selectable="NO" id="byQ-Sg-7xd">
-                                <rect key="frame" x="16" y="63" width="343" height="490"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="History of changes:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-Sg-7xd">
+                                <rect key="frame" x="16" y="63" width="378" height="490"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="490" id="1W3-qE-j9a"/>
+                                    <constraint firstAttribute="width" constant="378" id="qhc-QO-038"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kag-4r-QRB">
-                                <rect key="frame" x="124" y="718" width="113" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="✗">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="changeColorOfButton:" destination="BYZ-38-t0r" eventType="touchDown" id="S2u-bj-m3q"/>
-                                    <action selector="resetCountValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FRu-Yh-RDb"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0bp-Lx-U9h">
-                                <rect key="frame" x="116" y="572" width="142" height="138"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-Lx-U9h">
+                                <rect key="frame" x="136" y="577" width="142" height="138"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="EgP-Xj-yZt"/>
+                                    <constraint firstAttribute="width" constant="142" id="iTc-Oy-kfL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="66"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iW4-dl-eB6">
-                                <rect key="frame" x="266" y="592" width="93" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW4-dl-eB6">
+                                <rect key="frame" x="301" y="592" width="93" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="52R-Wt-3tQ"/>
+                                    <constraint firstAttribute="width" constant="93" id="JSg-EN-477"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="-"/>
@@ -56,13 +50,32 @@
                                     <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="131"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="changeColorOfButton:" destination="BYZ-38-t0r" eventType="touchDown" id="K49-6e-Rq4"/>
+                                    <action selector="changeColorOfButton:" destination="BYZ-38-t0r" eventType="touchDown" id="f8G-T6-Mn2"/>
+                                    <action selector="changeColorOfButtonToWhite:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="sVh-Jf-mXS"/>
                                     <action selector="decreaseByOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIP-LW-vvS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B4f-79-4DP">
-                                <rect key="frame" x="24" y="597" width="101" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kag-4r-QRB">
+                                <rect key="frame" x="149" y="735" width="113" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="O9F-te-jVb"/>
+                                    <constraint firstAttribute="width" constant="113" id="nfr-ik-vlP"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="✗">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetCountValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FRu-Yh-RDb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-79-4DP">
+                                <rect key="frame" x="16" y="592" width="101" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="gzt-iR-ORI"/>
+                                    <constraint firstAttribute="width" constant="101" id="xYB-OD-lFe"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Increase by 1"/>
@@ -70,13 +83,32 @@
                                     <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="89"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="changeColorOfButton:" destination="BYZ-38-t0r" eventType="touchDown" id="gLC-V0-7EQ"/>
+                                    <action selector="changeColorOfButton:" destination="BYZ-38-t0r" eventType="touchDown" id="Sja-FI-lTW"/>
+                                    <action selector="changeColorOfButtonToWhite:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Uq8-Dv-EvT"/>
                                     <action selector="increasingByOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncn-m5-h0M"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kag-4r-QRB" secondAttribute="trailing" constant="152" id="0By-Su-HV2"/>
+                            <constraint firstItem="B4f-79-4DP" firstAttribute="top" secondItem="byQ-Sg-7xd" secondAttribute="bottom" constant="39" id="2xb-0v-ndh"/>
+                            <constraint firstItem="byQ-Sg-7xd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="31j-Cq-lyb"/>
+                            <constraint firstItem="kag-4r-QRB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="4C5-EN-m1o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iW4-dl-eB6" secondAttribute="bottom" constant="172" id="DvX-47-7za"/>
+                            <constraint firstItem="B4f-79-4DP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Hgo-oQ-46D"/>
+                            <constraint firstItem="iW4-dl-eB6" firstAttribute="top" secondItem="byQ-Sg-7xd" secondAttribute="bottom" constant="39" id="LGX-Ys-omj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kag-4r-QRB" secondAttribute="bottom" constant="34" id="OiF-rB-j0T"/>
+                            <constraint firstItem="byQ-Sg-7xd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="R01-sD-0vc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B4f-79-4DP" secondAttribute="bottom" constant="172" id="YPm-If-5bi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iW4-dl-eB6" secondAttribute="trailing" constant="20" id="ckK-xh-gvk"/>
+                            <constraint firstItem="iW4-dl-eB6" firstAttribute="leading" secondItem="0bp-Lx-U9h" secondAttribute="trailing" constant="23" id="iWP-Sx-zyV"/>
+                            <constraint firstItem="0bp-Lx-U9h" firstAttribute="leading" secondItem="B4f-79-4DP" secondAttribute="trailing" constant="19" id="nlr-J2-1vq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="byQ-Sg-7xd" secondAttribute="trailing" constant="20" id="p55-MQ-VQy"/>
+                            <constraint firstItem="kag-4r-QRB" firstAttribute="top" secondItem="0bp-Lx-U9h" secondAttribute="bottom" constant="20" id="zBQ-NZ-6lP"/>
+                            <constraint firstItem="0bp-Lx-U9h" firstAttribute="top" secondItem="byQ-Sg-7xd" secondAttribute="bottom" constant="24" id="zvq-lq-mOa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="historyOfChanges" destination="byQ-Sg-7xd" id="d1y-HR-DPu"/>
@@ -85,12 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="-28.817733990147783"/>
+            <point key="canvasLocation" x="128.98550724637681" y="-29.464285714285712"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

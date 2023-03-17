@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     @IBAction private func decreaseByOne(_ sender: UIButton) {
         if count > 0 {
             count -= 1
+            
             sender.tintColor = .white
             historyOfChanges.isHidden = false
             meaningOfCounter.textColor = .blue
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
     }
     @IBAction private func resetCountValue(_ sender: UIButton) {
         count = 0
+        changeColorOfButton(sender)
         sender.tintColor = .white
         historyOfChanges.isHidden = false
         meaningOfCounter.textColor = .white
@@ -72,6 +74,15 @@ class ViewController: UIViewController {
         case 0: sender.tintColor = .red
         case 1 where count <= 0: sender.tintColor = .green
         case 1 where count > 0: sender.tintColor = .blue
+        case 2: sender.tintColor = .white
+        default: sender.tintColor = .white
+        }
+    }
+    @IBAction func changeColorOfButtonToWhite(_ sender: UIButton) {
+        switch sender.tag {
+        case 0: sender.tintColor = .white
+        case 1 where count <= 0: sender.tintColor = .white
+        case 1 where count > 0: sender.tintColor = .white
         case 2: sender.tintColor = .white
         default: sender.tintColor = .white
         }

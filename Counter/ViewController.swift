@@ -10,29 +10,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         historyOfChanges.isHidden = true
-        func newFormatDate() -> String {
-            let dateNow = Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US")
-            dateFormatter.dateFormat = "d MMM yy - HH:mm:ss"
-            return dateFormatter.string(from: dateNow)
-        }
     }
     
     @IBOutlet weak private var meaningOfCounter: UILabel!
     @IBOutlet weak private var historyOfChanges: UITextView!
     private var count = 0
     
+    
     private var newFormatDate: String {
-        func newFormatDate() -> String {
             let dateNow = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "en_US")
             dateFormatter.dateFormat = "d MMM yy - HH:mm:ss"
             return dateFormatter.string(from: dateNow)
         }
-        return newFormatDate()
-    }
     
     @IBAction private func increasingByOne(_ sender: UIButton) {
         count += 1
@@ -45,7 +36,6 @@ class ViewController: UIViewController {
     @IBAction private func decreaseByOne(_ sender: UIButton) {
         if count > 0 {
             count -= 1
-            
             sender.tintColor = .white
             historyOfChanges.isHidden = false
             meaningOfCounter.textColor = .blue
@@ -74,7 +64,6 @@ class ViewController: UIViewController {
         case 0: sender.tintColor = .red
         case 1 where count <= 0: sender.tintColor = .green
         case 1 where count > 0: sender.tintColor = .blue
-        case 2: sender.tintColor = .white
         default: sender.tintColor = .white
         }
     }
@@ -83,7 +72,6 @@ class ViewController: UIViewController {
         case 0: sender.tintColor = .white
         case 1 where count <= 0: sender.tintColor = .white
         case 1 where count > 0: sender.tintColor = .white
-        case 2: sender.tintColor = .white
         default: sender.tintColor = .white
         }
     }

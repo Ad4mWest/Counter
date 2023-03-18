@@ -25,6 +25,11 @@ class ViewController: UIViewController {
             return dateFormatter.string(from: dateNow)
         }
     
+    private func automaticScrolling() {
+        let scroll = NSMakeRange(historyOfChanges.text.count - 1, 1)
+        historyOfChanges.scrollRangeToVisible(scroll)
+    }
+    
     @IBAction private func increasingByOne(_ sender: UIButton) {
         count += 1
         sender.tintColor = .white
@@ -32,6 +37,7 @@ class ViewController: UIViewController {
         meaningOfCounter.textColor = .red
         meaningOfCounter.text = "\(count)"
         historyOfChanges.text += "\n\(newFormatDate) Increase"
+        automaticScrolling()
     }
     @IBAction private func decreaseByOne(_ sender: UIButton) {
         if count > 0 {
@@ -41,12 +47,14 @@ class ViewController: UIViewController {
             meaningOfCounter.textColor = .blue
             meaningOfCounter.text = "\(count)"
             historyOfChanges.text += "\n\(newFormatDate) Decrease"
+            automaticScrolling()
         } else {
             historyOfChanges.isHidden = false
             sender.tintColor = .white
             meaningOfCounter.textColor = .green
             meaningOfCounter.text = "\(count)"
             historyOfChanges.text += "\n\(newFormatDate) SubZero"
+            automaticScrolling()
         }
     }
     @IBAction private func resetCountValue(_ sender: UIButton) {
@@ -57,6 +65,7 @@ class ViewController: UIViewController {
         meaningOfCounter.textColor = .white
         meaningOfCounter.text = "\(count)"
         historyOfChanges.text += "\n\(newFormatDate) Reset"
+        automaticScrolling()
     }
     
     @IBAction func changeColorOfButton(_ sender: UIButton) {

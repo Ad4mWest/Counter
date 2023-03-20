@@ -11,7 +11,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         historyOfChanges.isHidden = true
     }
-    
     @IBOutlet weak private var meaningOfCounter: UILabel!
     @IBOutlet weak private var historyOfChanges: UITextView!
     private var count = 0
